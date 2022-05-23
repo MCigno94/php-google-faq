@@ -112,7 +112,7 @@ $navbar_items = [
         margin: 0 auto;
     }
     h3 {
-        margin-top: 3rem;
+        margin-top: 2rem;
         margin-bottom: 1.5rem;
     }
     a {
