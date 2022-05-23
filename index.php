@@ -113,6 +113,7 @@ $navbar_items = [
     }
     h2 {
         margin-top: 3rem;
+        margin-bottom: 1.5rem;
     }
     a {
         text-decoration: none;
