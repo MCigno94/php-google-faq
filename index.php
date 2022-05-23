@@ -108,15 +108,19 @@ $navbar_items = [
         font-size: 2rem;
     }
     .container {
-        width: 85%;
+        width: 65%;
         margin: 0 auto;
     }
-    h2 {
+    h3 {
         margin-top: 3rem;
         margin-bottom: 1.5rem;
     }
     a {
         text-decoration: none;
+    }
+    p {
+        padding-bottom: 1rem;
+        font-size: 0.8rem;
     }
 </style>
 
@@ -143,7 +147,7 @@ $navbar_items = [
         <div class="container">
             <section class="articles">
                 <?php foreach ($faq_google as $key => $value) : ?>
-                    <h2><?php echo $key ?></h2>
+                    <h3><?php echo $key ?></h3>
                     <?php foreach ($value as $text) : ?>
                         <p><?php echo $text ?></p>
                     <?php endforeach; ?>
