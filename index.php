@@ -32,7 +32,7 @@ $faq_google = [
 
 ];
 
-var_dump($faq_google);
+//var_dump($faq_google);
 
 
 ?>
@@ -45,14 +45,32 @@ var_dump($faq_google);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Faq Google</title>
 </head>
-<body>
 
-<?php foreach ($faq_google as $key => $value) : ?>
-    <h2><?php echo $key ?></h2>
-    <?php foreach ($value as $text) : ?>
-        <p><?php echo $text ?></p>
-    <?php endforeach; ?>
-<?php endforeach; ?>
-    
+<style>
+    .container {
+        width: 50vw;
+        margin: 0 auto;
+    }
+    h2 {
+        margin-top: 3rem;
+    }
+    a {
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <section class="articles">
+            <?php foreach ($faq_google as $key => $value) : ?>
+                <h2><?php echo $key ?></h2>
+                <?php foreach ($value as $text) : ?>
+                    <p><?php echo $text ?></p>
+                <?php endforeach; ?>
+            <?php endforeach; ?>        
+        </section>
+        <!-- /.articles -->
+    </div>
+    <!-- /.container -->
 </body>
 </html>
