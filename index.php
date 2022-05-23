@@ -31,9 +31,30 @@ $faq_google = [
         ]
 
 ];
+$navbar_items = [
+        [
+            "title_section" => "Introduzione",
+            "active" => false
+        ],
+        [
+            "title_section" => "Norme sulla privacy",
+            "active" => false
+        ],
+        [
+            "title_section" => "Termini di servizio",
+            "active" => false
+        ],
+        [
+            "title_section" => "Tecnologie",
+            "active" => false
+        ],
+        [
+            "title_section" => "Domande frequenti",
+            "active" => true
+        ],
+    ]
 
 //var_dump($faq_google);
-
 
 ?>
 
@@ -47,8 +68,47 @@ $faq_google = [
 </head>
 
 <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .site-header {
+        padding: 0 1rem;
+        border-bottom: 1px solid grey;
+    }
+    .logo {
+        display: flex;
+        align-items: flex-start;
+    }
+    .navbar {
+    }
+    ul {
+        list-style: none;
+        display: flex;
+    }
+    li {
+        margin-right: 1.5rem;
+    }
+    .active {
+        color: #2154c8;
+        border-bottom: 3px solid #2154c8;
+    }
+    li a{
+        color: black;
+        display:block;
+        padding: 1rem 0;
+    }
+    .logo > img{
+        width: 100px;
+        height: auto;
+    }
+    .logo div {
+        padding: 0 1rem;
+        font-size: 2rem;
+    }
     .container {
-        width: 50vw;
+        width: 85%;
         margin: 0 auto;
     }
     h2 {
@@ -60,17 +120,38 @@ $faq_google = [
 </style>
 
 <body>
-    <div class="container">
-        <section class="articles">
-            <?php foreach ($faq_google as $key => $value) : ?>
-                <h2><?php echo $key ?></h2>
-                <?php foreach ($value as $text) : ?>
-                    <p><?php echo $text ?></p>
-                <?php endforeach; ?>
-            <?php endforeach; ?>        
-        </section>
-        <!-- /.articles -->
-    </div>
-    <!-- /.container -->
+    <header class="site-header">
+        <div class="logo">
+            <img src="https://1000marche.net/wp-content/uploads/2020/03/Google-logo.png" alt="logo google">
+            <div>Privacy & Termini</div>
+        </div>
+        <!-- /.logo -->
+        <nav class="navbar">
+            <ul>
+                <?php foreach ($navbar_items as $key => $value) : ?>
+                <li>
+                    <a class=" <?php echo $value["active"] == true ? 'active' : '' ?> " href="#"><?php echo $value["title_section"] ?></a>
+                    <?php endforeach; ?>
+                </li>
+            </ul>
+        </nav>
+        <!-- /.navbar -->
+    </header>
+    <!-- /.site-header -->
+    <main class="sitemain">
+        <div class="container">
+            <section class="articles">
+                <?php foreach ($faq_google as $key => $value) : ?>
+                    <h2><?php echo $key ?></h2>
+                    <?php foreach ($value as $text) : ?>
+                        <p><?php echo $text ?></p>
+                    <?php endforeach; ?>
+                <?php endforeach; ?>        
+            </section>
+            <!-- /.articles -->
+        </div>
+        <!-- /.container -->
+    </main>
+    <!-- /.sitemain -->
 </body>
 </html>
